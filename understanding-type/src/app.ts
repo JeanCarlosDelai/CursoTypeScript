@@ -1,10 +1,28 @@
+class Department {
+  name: string;
+  employees: string[] = [];
 
-//Colocar o ponto de exclamação faz com que seja informado que existe o 'button'.
+  constructor(n: string) {
+    this.name = n;
+  }
+  // describe() {
+  //   console.log('Departament ' + this.name);
+  // }
+  describe(this: Department) {
+    console.log('Departament ' + this.name);
+  }
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+  printEmployeeInformation() {
+    console.log(this.employees);
+  }
+}
 
-const button = document.querySelector("button")!;
+const accounting = new Department('Contando');
 
-// Um comentário
+accounting.describe();
 
-button.addEventListener("click", () => {
-  console.log("Clicado");
-});
+// const accountingCopy = { name: 'DUMMY', describe: accounting.describe};
+
+// accountingCopy.describe();
