@@ -1,28 +1,44 @@
-class Department {
-  name: string;
-  employees: string[] = [];
+// Uma alternativa é usar types, mas interface é melhor
+//type AddFn = (a: number, b: number) => number;
 
-  constructor(n: string) {
-    this.name = n;
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
+interface Named {
+  readonly name?: string;
+  outputName?: string;
+}
+
+//Em uma interface não dá para colocar protected ou private, vai ser sempre public
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable, Named {
+  name?: string;
+  age = 30;
+
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
   }
-  // describe() {
-  //   console.log('Departament ' + this.name);
-  // }
-  describe(this: Department) {
-    console.log('Departament ' + this.name);
-  }
-  addEmployee(employee: string) {
-    this.employees.push(employee);
-  }
-  printEmployeeInformation() {
-    console.log(this.employees);
+
+  greet(phrase: string): void {
+    console.log(phrase + " " + this.name);
   }
 }
 
-const accounting = new Department('Contando');
+let user1: Greetable;
 
-accounting.describe();
+user1 = new Person("Max");
 
-// const accountingCopy = { name: 'DUMMY', describe: accounting.describe};
-
-// accountingCopy.describe();
+user1.greet("Olá");
+console.log(user1);
