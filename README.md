@@ -1,4 +1,4 @@
-# Curo TypeScript
+# Curso TypeScript
 
 # Iniciando
 
