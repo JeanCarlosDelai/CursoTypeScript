@@ -1,13 +1,25 @@
-# CursoTypeScript
+# Curo TypeScript
 
-Como iniciar
+# Iniciando
 
-* Abrir terminal do Git, e fazer o Git clone.
-* Instalar node segue link_____.
-* Abrir o projeto e instalar os pacotes com o comando node install ou node i.
-* Usar o comando tsc -init para criar um arquivo tsconfig.json
-* O arquivo acima cria algumas funcionalidades, uma dela é criar um arquivo js para cada arquivo ts que temos.
-* instalar no vs code a estensão lite server
-* iniciar o servidor com npm start
-* ativar o modo watch do type, tsc --watch ou tsc -w.
-* O modo Whatch, para cada alteração no código ts, ele compila automaticamente o novo código js.
+## Dependências
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) ou [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm): Gerenciador de dependências;
+
+## Configuração
+- Clonar repositório:
+```
+git clone https://github.com/JeanCarlosDelai/CursoTypeScript.git
+```
+- Selecione algum dos projetos e abra o diretório
+- Exemplo:
+```
+cd my-app2
+```
+- Instalar dependências do projeto:
+```
+npm i
+```
+- Iniciar o projeto:
+```
+npm start
+```
